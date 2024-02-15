@@ -1,0 +1,495 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Software &#8212; Levee Mapping Handbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'software';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Entering data" href="data_entry.html" />
+    <link rel="prev" title="Connecting to the data" href="data_connection.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Levee Mapping across the USA
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="iu_computing.html">Computing accounts at IU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_connection.html">Connecting to the data</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_entry.html">Entering data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="identifying_levees.html">Identifying natural river levees in lidar</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/software.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Software</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-qgis">Installing QGIS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brief-intro-to-qgis">Brief intro to QGIS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-a-google-satellite-image-basemap">Adding a google satellite image basemap</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="software">
+<h1>Software<a class="headerlink" href="#software" title="Permalink to this heading">#</a></h1>
+<section id="installing-qgis">
+<h2>Installing QGIS<a class="headerlink" href="#installing-qgis" title="Permalink to this heading">#</a></h2>
+<p>If you find yourself needing to work off campus, or work at another location on campus, you may need to install software on your computer to process and work with these data. Almost all of you should have a web browser, Which is how you will enter day though, and so the main people software that you may find yourself needed to install is QGIS.</p>
+<p>QGIS is open source software, which means that it is written and developed by volunteers around the world, and all of the code that defines how the software works is available both for free and is available for you to modify if you wish. Because of this, QGIS is rapidly becoming one of the most widely used gis software in the world, and you might find yourself using it often in the future getting to know it now is a good investment both for understanding earth systems, as well as developing a marketable skill.</p>
+<p>You can download QGIS <a class="reference external" href="https://www.QGIS.org/en/site/forusers/download.html">here</a>. The user manual is <a class="reference external" href="https://docs.QGIS.org/3.28/en/docs/user_manual/">here</a>. If you are installing software, you might go straight to section 5.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Please ensure you download/install a newer version of QGIS. We want version <code class="docutils literal notranslate"><span class="pre">3.34</span></code> or higher.</p>
+</div>
+</section>
+<section id="brief-intro-to-qgis">
+<h2>Brief intro to QGIS<a class="headerlink" href="#brief-intro-to-qgis" title="Permalink to this heading">#</a></h2>
+<p>QGIS Is an incredibly complicated piece of software, with an extremely rich feature set. There are lots of things you can do in the software and we will only be really using one or two of the tools and resources available. If this interests you and you continue to want to work with gis, I encourage you to take a class, or to come up with a project of your own (I’m happy to work with you on this) that may require gis. I believe that learning by doing is the best way to figure out how to use geographic data processing software. You need a problem to work on to motivate you and to focus your efforts, so if there’s something that you’re interested in, please reach out.</p>
+<p>That said, there’s a few things you will need to use in order to execute our research project and collect meaningful data. This is what you see when you first open up QGIS:</p>
+<p><img alt="" src="_images/qgis_blank.png" /></p>
+<p>Toolbars are at the top, a file browser and a layers window are to the left and the main central screen displays a map view of whatever data you are displaying.</p>
+<p>We will load two main kinds of data into QGIS: (1) raster data and (2) vector data. The main thing we will work with is high resolution topography data generated using lidar. We will also often use lines that represent the center line of a river as a major piece of data that we will reference to. There are many ways to load the data into the software. The most intuitive perhaps is that you can drag and drop from whatever file browser you have in your computer.</p>
+<p>When you have loaded data into the software it will appear in the layers window. Often, QGIS will also choose a default method to visualize the data. Visualizing the high resolution lidar data is discussed in depth in <a class="reference internal" href="data_entry.html#visualizing-rems"><span class="std std-ref">this other page</span></a>, but you can modify how the data are displayed by selecting different choices in the properties menu that define the “style” or “symbology” of the data. These are just jargon terms that mean “how the data are displayed.”</p>
+<p>To access the properties menu simply double click on the layer in the layers menu. The properties dialog box should pop up, and you should be able to see a wide variety of different options that you can specify or change. We will be focusing on the “symbology” tab. In that tab you will be able to alter the color map that is used to define what elevations are dark and which are light. You can choose from a wide variety of different color gradients. For data that are represented by lines you can choose whether the line is dashed, solid, or dotted. You can choose the color and the shape of points, really there is no limit to the options available to you.</p>
+<p>You will often want to make changes to the layer symbology repeatedly within a working session. When you are doing this, it becomes annoying to have to open the properties menu, make a change, and then close the properties menu to see whether the change had the effect that you wanted. To get around this you can place the symbology menu in a sidebar much like the browser or the layers dialogue. To do this simply right click on an area around the upper toolbars, and find the “Layer styling panel”. See the below screenshot for a helpful demonstration of how to do this. After you’ve done this, you should be able to manipulate the way layers are displayed and have them update in real time.</p>
+<p><img alt="" src="_images/layer_styling_toolbar.png" /></p>
+</section>
+<section id="adding-a-google-satellite-image-basemap">
+<h2>Adding a google satellite image basemap<a class="headerlink" href="#adding-a-google-satellite-image-basemap" title="Permalink to this heading">#</a></h2>
+<p>You may find it very helpful to have satellite imagery underlying all of the data that you want to display. Google satellite imagery servers are a marvel of modern technology. It is very easy and very quick to get high resolution imagery all across the world served to you over the internet. Here is a blog post but you can go to for more information. But for our purposes the easiest way to accomplish this is to go to the xyz tiles option in the qgis browser window.</p>
+<ol class="arabic simple">
+<li><p>Open the browser panel. (usually on the left-hand side of the window)</p></li>
+<li><p>find the entry for “XYZ tiles”, right click on this, and select “new connection”</p></li>
+<li><p>Give the connection a name. I usually just type “Google Satellite”</p></li>
+<li><p>Copy and paste this URL into the URL bar:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>http://www.google.cn/maps/vt?lyrs=s@189&amp;gl=cn&amp;x={x}&amp;y={y}&amp;z={z}
+</pre></div>
+</div>
+<p>Click OK, and an item with the name you gave it should appear beneath XYZ tiles. By double-clicking this, or dragging it into the layers window, you should be able to display satellite energy as if it were a layer in qgis. Here is an example picture of what it will look like when you have correctly enabled satellite imagery.</p>
+<p><img alt="" src="_images/google_satellite.png" /></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="data_connection.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Connecting to the data</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="data_entry.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Entering data</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-qgis">Installing QGIS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brief-intro-to-qgis">Brief intro to QGIS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-a-google-satellite-image-basemap">Adding a google satellite image basemap</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Eric Barefoot
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

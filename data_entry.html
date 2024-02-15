@@ -1,0 +1,622 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Entering data &#8212; Levee Mapping Handbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'data_entry';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Identifying natural river levees in lidar" href="identifying_levees.html" />
+    <link rel="prev" title="Software" href="software.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Levee Mapping across the USA
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="iu_computing.html">Computing accounts at IU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_connection.html">Connecting to the data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="software.html">Software</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Entering data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="identifying_levees.html">Identifying natural river levees in lidar</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/data_entry.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Entering data</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-leave-notes">When to leave notes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#timestamps-and-authorship">Timestamps and authorship</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-viability">Data viability</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poor-data-resolution">Poor data resolution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#human-impacts">Human impacts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#river-confinement">River Confinement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#levee-visual-assessment">Levee Visual Assessment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-lidar-rems">Visualizing lidar REMs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identifying-levees">Identifying levees</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#making-your-assessment-and-rating-your-confidence">Making your assessment and rating your confidence</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nearest-usgs-gage">Nearest USGS gage</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#valley-width">Valley width</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#migration-rate">Migration rate</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="entering-data">
+<h1>Entering data<a class="headerlink" href="#entering-data" title="Permalink to this heading">#</a></h1>
+<p>You will be manipulating, working with, and visualizing a lot of different kinds of data in gis. You will translate all of those findings, insights, and interpretations into a few measurements that you will record in a spreadsheet that we collaboratively build together. I encourage you to keep your own notes as you work. For example, I have a research notebook that I maintain it all times where I give the date, and take notes as I work on whatever project I happen to be working on. I take these notes in a computer document, however you can use whatever format works for you. Feeling requirement really is that your notes be informative to you and keep track of what you are doing.</p>
+<p>However, the end data product that we will be working towards is the collaborative spreadsheet. All of your measurements, interpretations, and notes should ultimately end up in that collaborative document.</p>
+<p>You should have gotten a link to edit a google sheet. If you have not, <a class="reference external" href="mailto:ebarefoo&#37;&#52;&#48;iu&#46;edu">contact Eric</a>.</p>
+<p>This spreadsheet is organized where rows represent a reach of river. Each individual sample that we will be working with has a unique identification number. Thus, each row begins with the identification number, and every column thereafter represents a new piece of information about this reach of river. For example, one of the columns is entitled “viable.” A value of <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> in that column indicates that the river reach in that row is not a viable reach for analysis. Below, I will go into detail about what factors disqualify a river reach from being viable.</p>
+<p>Many aspects of this spreadsheet are restricted. Some columns cannot be edited by anybody except for the project lead. This is because most of those fields are automatically generated. Many of the columns that you as the mappers will interact with have restricted data entry, meaning that there are only a limited set of responses that are allowed. This is mostly to ensure that the data collection process is consistent, and that typos don’t make for problems later on.</p>
+<p>Entering data is not a glamorous or particularly fun process, but we appreciate and deeply value your contributions to this and your care and attention on this work is essential to the success of the project. Thank you thank you!</p>
+<section id="when-to-leave-notes">
+<h2>When to leave notes<a class="headerlink" href="#when-to-leave-notes" title="Permalink to this heading">#</a></h2>
+<p>In general, more documentation and more detail is always better. In our collaborative spreadsheet, we have three columns dedicated to these kinds of notes. They are all on the far right hand side of the spreadsheet. If you scroll to the right, you should see three columns entitled “observations”, “interpretations”, and “notes”.</p>
+<p>These columns support free text entry, so please leave whatever thoughts, observations, or interpretations that you may have when evaluating the data that we have. These notes are essential for us when placing the data in context and interpreting why some datapoints may be useful or not.</p>
+<p>Common things that you may want to note in these columns include:</p>
+<ol class="arabic simple">
+<li><p>Reasons for disqualifying a river reach</p></li>
+<li><p>Concerns about the quality of data or the availability of some piece of information</p></li>
+<li><p>Notes about duplicated data.</p></li>
+<li><p>Notes about landforms and relevant topography or the geographic setting</p></li>
+</ol>
+<p>Oftentimes, the only piece of information that would be available more important for a river reach are the notes. If you have determined that a reach should be disqualified, your notes are going to be essential for placing that decision in context. So please be detailed, but also concise.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you would like to raise a question about a particular data point, row, or observation, but it’s not worth an email, then comment on the cell you have a question about. It will start a discussion between you, your fellow mappers and me without having to have a reply-all email.</p>
+</div>
+<p>When you are loading in data, and searching for the right rows of the database, you may find that some of the datapoints are duplicated. You may find that the datapoint you are about to fill in has one or more rows already recorded. I have tried to eliminate these automatically, but often miss them. If you see them, please leave a comment on the duplicated ID, so that I can reconcile the data.</p>
+<p>Now, let’s talk about what kind of determinations and interpretations you’re going to have to make. You should consider these a hierarchical set, which is to say that this is almost like a decision tree. At each stage in this process your work and if you make certain determinations. It’s at that point that you will want to leave a note, mark down the time and note your authorship, then move on to the next reach.</p>
+</section>
+<section id="timestamps-and-authorship">
+<h2>Timestamps and authorship<a class="headerlink" href="#timestamps-and-authorship" title="Permalink to this heading">#</a></h2>
+<p>After you have made any notes, and when you are finished noting down all of the data that you will want to include, you should note your authorship of that data, and note the time and date. In the collaborative spreadsheet that we are working on, this information is recorded in columns <strong><code class="docutils literal notranslate"><span class="pre">O</span></code></strong> and <strong><code class="docutils literal notranslate"><span class="pre">P</span></code></strong> , (<code class="docutils literal notranslate"><span class="pre">mapper</span></code> and <code class="docutils literal notranslate"><span class="pre">date</span></code>, respectively).</p>
+<p>In the <code class="docutils literal notranslate"><span class="pre">mapper</span></code> column, there is a drop-down menu, and your name should appear somewhere in that drop-down menu. If it does not, <a class="reference external" href="mailto:ebarefoo&#37;&#52;&#48;iu&#46;edu">contact Eric</a>. Select your name.</p>
+<p>In the <code class="docutils literal notranslate"><span class="pre">date</span></code> column, Please put a timestamp for the current time and date. You could do this manually if you so choose, but luckily there is a nice shortcut. If you select that cell and spreadsheet and then use the key combination <code class="docutils literal notranslate"><span class="pre">Ctrl</span>&#160; <span class="pre">Alt</span>&#160; <span class="pre">Shift</span>&#160; <span class="pre">;</span></code> the time and date should appear in that cell.</p>
+<p>These two pieces of information should be recorded whenever you add data to a row.</p>
+</section>
+<section id="data-viability">
+<h2>Data viability<a class="headerlink" href="#data-viability" title="Permalink to this heading">#</a></h2>
+<p>The first determination that you should make is whether the data for the reach of river you’re working on are viable or not.</p>
+<p>First of all, if some crucial pieces of data are missing, please leave a note in the spreadsheet and move on. Those two crucial pieces of information are the REM, and the river center line. As you have learned when we are introducing you to the research project, a river rem is a digital representation of the topography relative to the water surface on the river. That is, it is an image where every pixel represents an elevation, and that elevation is the elevation above the water surface of the river. This data is the essential data that you’ll be working with. The river centre line will also be ultimately very important for you. If either of these are missing, then something is wrong, and you should leave a note in the spreadsheet and move on to the next folder.</p>
+<p>Just to reiterate, if you open up the data folder, and either of the two following files are absent, then note their absence and move on:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dem_XXXXXXXXXX_prj_REM</span><span class="o">.</span><span class="n">tif</span>
+<span class="n">centerline_XXXXXXXXXX_prj</span><span class="o">.</span><span class="n">geojson</span>
+</pre></div>
+</div>
+<p>If the data are all present, there are two main disqualification criteria: (1) poor data resolution and (2) human impacts.</p>
+<section id="poor-data-resolution">
+<h3>Poor data resolution<a class="headerlink" href="#poor-data-resolution" title="Permalink to this heading">#</a></h3>
+<p id="low-res-info">We have attempted to download data with a per-pixel resolution of 1 meter or better. In some cases, though, the data we download is lower resolution, 5 or 10 meter per mixel or more. You will learn to recognize when the data is lower resolution than desired. Here is an examples of high resolution topography, and then the same location at much lower resolution. Notice how that when the data is high resolution you can see a lot more detail and that at the same scale, features that are visible and clear in the high resolution data, our pixelated and difficult to see in the low resolution data.  Ask one of the other mappers working on the project if you are not certain if the data is of sufficient quality to move forward. In the meantime, if you are uncertain, leave a note and move on.</p>
+<p><img alt="high resolution data" src="_images/usgs_1m.png" /></p>
+<p><img alt="low resolution data" src="_images/usgs_10m.png" /></p>
+<!-- ![](screenshots/) -->
+</section>
+<section id="human-impacts">
+<h3>Human impacts<a class="headerlink" href="#human-impacts" title="Permalink to this heading">#</a></h3>
+<p>The other main factor that we are concerned about is when human infrastructure, or human modification substantially altered the course of rivers. Examples of this might include things like dams, trenching, or substantial urban buildup. If that the river reach you are working with passes through a human-made lake, if there is substantial construction all the way up to the riverbanks on a large portion of the river’s length, or if the river’s natural course has been substantially modified by people, you will want to disqualify that reach.</p>
+<p>Here are some quick examples of each of those different things.</p>
+<p><strong>Here, the river centerline is shown as a white line, and a dam is marked in neon red. (imagery)</strong></p>
+<p><img alt="dam" src="_images/dam.png" /></p>
+<p><strong>Here is a highly urbanized river. (imagery)</strong></p>
+<p><img alt="urban" src="_images/indy.png" /></p>
+<p><strong>Here is a river that was straightened. (lidar data)</strong></p>
+<p><img alt="modified" src="_images/kankakee.png" /></p>
+</section>
+<section id="summary">
+<h3>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h3>
+<p>In both of these cases (poor data resolution and human modification), mark <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> in the <code class="docutils literal notranslate"><span class="pre">viable</span></code> column, provide a note describing why you disqualified the reach, note your authorship and the date, then move on.</p>
+</section>
+</section>
+<section id="river-confinement">
+<h2>River Confinement<a class="headerlink" href="#river-confinement" title="Permalink to this heading">#</a></h2>
+<p>Even if a reach is a viable candidate for analysis, we are not interested in measuring river levees in places where river levees cannot exist. The most obvious example of how this might happen is if a river is confined by the valley that it flows in. The most intuitive example of this might be the grand canyon. The colorado river (which flows through the grand canyon) cannot form a levee because the walls of the canyon are the same as the banks of the river.</p>
+<p>Not all canyons need to be as dramatic as the grand canyon, and many rivers are restricted by their valuables. In general, when the area surrounding the river is mostly flat and its elevation is not much more than a few meters above the river surface, we call it a “floodplain”. We are only interested in measuring river levees when the flood plain is about twice or three times as wide of the river. If you find that the river along most of its length in the data that you have is confined with a narrow floodplain, then mark that river as nonviable (<code class="docutils literal notranslate"><span class="pre">viable</span></code>=<code class="docutils literal notranslate"><span class="pre">FALSE</span></code>), but then mark <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> in the <code class="docutils literal notranslate"><span class="pre">confined</span></code> column, note your authorship and time, then move on.</p>
+</section>
+<section id="levee-visual-assessment">
+<h2>Levee Visual Assessment<a class="headerlink" href="#levee-visual-assessment" title="Permalink to this heading">#</a></h2>
+<p>If both tests have been met—that is, the river reach is both viable and unconfined—then we would like you to make an assessment of how abundant natural levees are on the river.</p>
+<p>To do this you were going to have to visualize the river rem and make evaluations on the map. Here’s the procedure you should follow for visualizing the rem. It is at this point that you may often find and discover that the data set is of low resolution (<a class="reference internal" href="#low-res-info"><span class="std std-ref">see above</span></a>).</p>
+<section id="visualizing-lidar-rems">
+<h3>Visualizing lidar REMs<a class="headerlink" href="#visualizing-lidar-rems" title="Permalink to this heading">#</a></h3>
+<p id="visualizing-rems">You can load data into qgis a number of different ways, the simplest and most intuitive is to just drag and drop it from when it’s older you have into the data screen. Once you have done so however oftentimes you will not be looking at the right location to view the data. Therefore what you will want to do is to zoom to the location where the data exist. Once you have done this you will want to change how the data is displayed, said that river levees are more evident in the image. The basic sequence is as follows:</p>
+<ol class="arabic simple">
+<li><p>load REM</p></li>
+<li><p>zoom to data</p></li>
+<li><p>convert REM visualization to “hillshade”</p></li>
+<li><p>duplicate the REM layer</p></li>
+<li><p>change the blending mode of the uppermost REM layer to “multiply”</p></li>
+<li><p>change the render type of the uppermost REM layer to “singleband pseudocolor”</p></li>
+<li><p>change the limits of the colorbar to span from 0 to some small number (2-10 are usually good options)</p></li>
+</ol>
+<p>Here’s an example video of how to do this sequence.</p>
+<video controls width=100%>
+    <source src="_static/screencasts/visualizing_rem.webm"/>
+</video>
+<p>You will find that each reach requires a different color threshold to make the topography clear.</p>
+</section>
+<section id="identifying-levees">
+<h3>Identifying levees<a class="headerlink" href="#identifying-levees" title="Permalink to this heading">#</a></h3>
+<p>What is a levee? What does it look like? This is a little complicated, so it is the subject of it’s <a class="reference internal" href="identifying_levees.html"><span class="doc std std-doc">own page</span></a>.</p>
+</section>
+<section id="making-your-assessment-and-rating-your-confidence">
+<h3>Making your assessment and rating your confidence<a class="headerlink" href="#making-your-assessment-and-rating-your-confidence" title="Permalink to this heading">#</a></h3>
+<p>Once you have an assessment and you have identified whether there are levees on your stretch of river or not, we want you to make an assessment of (1) abundance and (2) confidence</p>
+<p><strong>Abundance</strong></p>
+<p>If you think that overall, levees are present on half or more of the length of the river, then we will say that levees are <code class="docutils literal notranslate"><span class="pre">abundant</span></code>. If levees are present, but only on less than half of the river’s length, then they are <code class="docutils literal notranslate"><span class="pre">sparse</span></code>. If there are no levees, then levees are <code class="docutils literal notranslate"><span class="pre">absent</span></code>. Initially, please make this determination based on an overall assessment.</p>
+<p>When you have arrived at your assessment, enter it in the drop down menu in the <code class="docutils literal notranslate"><span class="pre">visual_levee_assessment</span></code> column. You will only be able to only enter one of those three values.</p>
+<p><strong>Confidence</strong></p>
+<p>Since identifying if a levee is present or not is a bit subjective, it is likely that sometimes you will be very uncertain of your assessment. Your confidence in the abundance level represents both your confidence in identifying levees where they are ambiguous, and also your confidence in whether the levees are abundant or sparse. <em>This is not a subjective measure of how confident you are in yourself, but rather whether you think the determination was ambiguous or not.</em> Rate your confidence as either <code class="docutils literal notranslate"><span class="pre">high</span></code>, <code class="docutils literal notranslate"><span class="pre">medium</span></code>, or <code class="docutils literal notranslate"><span class="pre">low</span></code> in the <code class="docutils literal notranslate"><span class="pre">confidence</span></code> column. Once again, there is a dropdown menu so that you can only enter one of those three values.</p>
+</section>
+</section>
+<section id="nearest-usgs-gage">
+<h2>Nearest USGS gage<a class="headerlink" href="#nearest-usgs-gage" title="Permalink to this heading">#</a></h2>
+<p>The USGS maintains a network of river discharge measuring stations called gages. We would also like you to locate the nearest USGS gage to the river reach you are working on. The easiest way to do this is to open up Google Earth Pro. In the Slate-Project folder, we have a folder called <code class="docutils literal notranslate"><span class="pre">gages_usa</span></code>, that contains 51 <code class="docutils literal notranslate"><span class="pre">.kml</span></code> files, one for each of the 50 US states (plus DC). To locate the nearest gage to your river reach:</p>
+<ol class="arabic simple">
+<li><p>Open Google Earth Pro (if not installed, follow instructions <a class="reference external" href="https://www.google.com/earth/about/versions/">here</a> to download google earth pro for desktop.)</p></li>
+<li><p>Drag and drop the <code class="docutils literal notranslate"><span class="pre">centerline_XXXXXXXXXXXXX.geojson</span></code> file into Google Earth Pro.</p></li>
+<li><p>Identify which state the centerline lies in.</p></li>
+<li><p>Drag and drop the corresponding file from <code class="docutils literal notranslate"><span class="pre">gages_usa</span></code> into Google Earth Pro.</p></li>
+<li><p>Return to the location of your river centerline, and find the nearest marker indicating a USGS gage on the same river that the centerline represents. You may have to go up or downstream some distance to find it.</p></li>
+<li><p>Once you have it, copy and paste the identification code (a number) and copy it into the <code class="docutils literal notranslate"><span class="pre">nearest_gage</span></code> column in the spreadsheet.</p></li>
+</ol>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>If you copy and paste the number in, please ensure that it is formatted as plain text, and that if there is a zero at the front of the code, that the entire code is entered. For example, a gage identification code could be 04269000, and 4269000 is <em>not</em> the same thing. If you enter the data and find that a leading zero disappears, try selecting the cell in the spreadsheet, clicking the <code class="docutils literal notranslate"><span class="pre">Format</span></code> menu, then selecting <code class="docutils literal notranslate"><span class="pre">Number</span></code> then <code class="docutils literal notranslate"><span class="pre">Plain</span> <span class="pre">Text</span></code> to convert it. See below for a screenshot. You can often circumvent this by copying and pasting with <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">Shift</span> <span class="pre">V</span></code> instead of simply <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">V</span></code>.</p>
+<p><img alt="" src="_images/format_text.png" /></p>
+</div>
+</section>
+<section id="valley-width">
+<h2>Valley width<a class="headerlink" href="#valley-width" title="Permalink to this heading">#</a></h2>
+<p>If we have asked you to measure the valley width, open and visualize the DEM like above, and then play around with the elevation colorbar until you are convinced that you can see where the valley walls stop and the floodplain begins. Floodplains are defined to be flatter, and the valley walls are steep, so the easiest way to do this is usually to set the lower limit of the colorbar to zero (river) and mess around with the upper color bar until you see a broad area surrounding the river colored in. If this area is relatively insensitive to the value you choose for the upper color bar level, then you’re in good shape.</p>
+<p>Next, choose a few locations along the length of the river, approximately every 2-3 kilometers. Measure the valley width using the ‘Measure’ tool in QGIS. It has this icon: <img alt="" src="_images/measure_icon.png" />. It allows you to measure between two points you click. Click on each side of the valley, attempting to measure approximately perpendicular to the overall valley trend. Here’s an example. The gold line represents the two points chosen as the measuring end points.</p>
+<p><img alt="valley width example" src="_images/valley_width_example.png" /></p>
+<p>Once you make several measurements like this, and note down the values that you get, take the average, and enter it in the <code class="docutils literal notranslate"><span class="pre">valley_width_m</span></code> column of the collaborative spreadsheet. The units should be <strong>meters</strong>.</p>
+</section>
+<section id="migration-rate">
+<h2>Migration rate<a class="headerlink" href="#migration-rate" title="Permalink to this heading">#</a></h2>
+<p>Coming soon….</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="software.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Software</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="identifying_levees.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Identifying natural river levees in lidar</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-leave-notes">When to leave notes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#timestamps-and-authorship">Timestamps and authorship</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-viability">Data viability</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poor-data-resolution">Poor data resolution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#human-impacts">Human impacts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#river-confinement">River Confinement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#levee-visual-assessment">Levee Visual Assessment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-lidar-rems">Visualizing lidar REMs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identifying-levees">Identifying levees</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#making-your-assessment-and-rating-your-confidence">Making your assessment and rating your confidence</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nearest-usgs-gage">Nearest USGS gage</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#valley-width">Valley width</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#migration-rate">Migration rate</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Eric Barefoot
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
