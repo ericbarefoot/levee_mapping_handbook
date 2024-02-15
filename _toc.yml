@@ -1,0 +1,13 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+- file: iu_computing
+- file: data_connection
+- file: software
+- file: data_entry
+- file: identifying_levees
+# - file: measuring_levees
+
