@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,9 +38,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -62,9 +62,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'measuring_levees';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Identifying natural river levees in lidar" href="identifying_levees.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -144,13 +147,14 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+  
     
     
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-light" alt="Levee Mapping Handbook - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Levee Mapping Handbook - Home"/>`);</script>
   
   
 </a></div>
@@ -164,12 +168,13 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="iu_computing.html">Computing accounts at IU</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data_connection.html">Connecting to the data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="software.html">Software</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data_entry.html">Entering data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="identifying_levees.html">Identifying natural river levees in lidar</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Measuring natural river levee dimensions</a></li>
 </ul>
 
     </div>
@@ -316,9 +321,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dividing-the-domain">Dividing the domain</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dividing-the-domain">Dividing the domain</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dissolve-centerline">Dissolve centerline</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#make-points-evenly-spaced-along-the-line">Make points evenly spaced along the line</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#taking-measurements">Taking measurements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-entry-gotchas">Data entry gotchas</a></li>
 </ul>
             </nav>
         </div>
@@ -332,17 +340,60 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="measuring-natural-river-levee-dimensions">
 <h1>Measuring natural river levee dimensions<a class="headerlink" href="#measuring-natural-river-levee-dimensions" title="Permalink to this heading">#</a></h1>
-<p>Under construction…</p>
-<p>only work with river stretches that have previously been identified as “abundantly” or “sparsely” leveed.</p>
+<p>The second stage of our research effort will be to measure natural river levees where they appear. These data will helop us answer the question of “what makes levees larger or smaller?”</p>
+<p>We will only work with river reaches that have previously been identified as “abundantly” or “sparsely” leveed.</p>
+<p>At a high level, your task will be to go through each of those river reaches, divide it into 1-km segments and record the width and height of levees in each of those segments.</p>
 <section id="dividing-the-domain">
 <h2>Dividing the domain<a class="headerlink" href="#dividing-the-domain" title="Permalink to this heading">#</a></h2>
+<p>We want to sample each of these river reaches densely enough to get an estimate of both the average levee dimensions and the variation. We also want to know how many segments of the river lack levees.</p>
+<p>To divide the river reach into segments, you can follow this procedure:</p>
+<section id="dissolve-centerline">
+<h3>Dissolve centerline<a class="headerlink" href="#dissolve-centerline" title="Permalink to this heading">#</a></h3>
+<p>Each river centerline is actually made of several segments of variable length. You can see that exemplified here:</p>
+<p><img alt="" src="_images/segments.png" /></p>
+<p>There may also be segments that are not the center of the river. Spurs, tributaries, or other connecting segments are not of interest to us. You can delete them. Just to be safe:</p>
+<ol class="arabic simple">
+<li><p><strong>first</strong> Make a copy of the original file in the data drive folder where it lives.</p></li>
+<li><p>make sure you are using the file whose name ends with “_prj”</p></li>
+<li><p>Select the one you have loaded in QGIS in the “layers” panel</p></li>
+<li><p>Click on the little yellow pencil icon to enable editing <img alt="" src="_images/pencil.png" /></p></li>
+<li><p>Enable the selection tool <img alt="" src="_images/select.png" /></p></li>
+<li><p>select the segments you want to remove. You can hold Shift to select multiple.</p></li>
+<li><p>hit delete. Then click the pencil again to stop editing. It will ask you to save, so go ahead and do that.</p></li>
+</ol>
+<p>Once you have trimmed away wll the excess segments, dissolve the feature together to make a single line. you can find that tool here</p>
+<p><img alt="" src="_images/dissolve.png" /></p>
+</section>
+<section id="make-points-evenly-spaced-along-the-line">
+<h3>Make points evenly spaced along the line<a class="headerlink" href="#make-points-evenly-spaced-along-the-line" title="Permalink to this heading">#</a></h3>
+<p>Now you need to make points evenly spaced along the line. We agreed to do this at 1 km = 1000 m segments</p>
+<p>You can use this tool:</p>
+<p><img alt="" src="_images/points_along.png" /></p>
+<p>change the spacing to 1000m and accept the other default options. After this, you should have points spaced evenly along the lines! Hooray!</p>
+</section>
 </section>
 <section id="taking-measurements">
 <h2>Taking measurements<a class="headerlink" href="#taking-measurements" title="Permalink to this heading">#</a></h2>
-<p>Use WGS84 EPSG:4326</p>
-</section>
-<section id="data-entry-gotchas">
-<h2>Data entry gotchas<a class="headerlink" href="#data-entry-gotchas" title="Permalink to this heading">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This procedure will only work if you have QGIS 3.28 or higher. If your version is lower, please upgrade on the website. Also, make sure the projection for the map view (this is in the lower right corner) reads as WGS84 <strong>EPSG:4326</strong></p>
+</div>
+<p>We want you to measure levee height and width, and to also record which segments of the river reach lack levees. So, once you have subdivided the domain into 1 km segments, go to the spreadsheet where we record the data, switch to the <code class="docutils literal notranslate"><span class="pre">levee_measurements</span></code> tab and block off n<span class="math notranslate nohighlight">\(\times\)</span>2 rows. For each segment, you will need two rows. Put the reach identifier on every other row of your block starting with the first row.</p>
+<p>For each segment, first make a determination if that reach has a levee. If it does not, just mark your name and the time. leave the other columns blank. It’ll look like this:</p>
+<p><img alt="" src="_images/blank_no_levees.png" /></p>
+<p>If there is a levee, follow this procedure:</p>
+<ol class="arabic simple">
+<li><p>Use the measure tool: <img alt="" src="_images/measure_icon.png" /></p></li>
+<li><p>Identify the edge of the levee. This will be a little subjective, but you all have been looking at levees for a while now. I expect that there will be some variation. But please pick two points, one on the riverbank, and then the closest point that marks the edge of the levee where it meets the floodplain.</p></li>
+<li><p>Use the measure tool to mark both places (left click to start, right click to end). Then as you will see in the dialog window, it should give you a latitude and longitude for each point, as well as the distance between them. Make sure this is in meters, please.</p></li>
+<li><p>There is a copy button. Just click that, then copy and paste it into your spreadsheet double row. It will look like this.</p></li>
+</ol>
+<p><img alt="" src="_images/measurement_in_spreadsheet.png" /></p>
+<ol class="arabic simple">
+<li><p>Note whether the levee is on the left or right bank of the river. The bank is left or right from the perspective of water flowing down the river. So if you are facing downstream, you would turn your boat to the left to get to the left bank. You can find out which way the river is flowing by drawing a topographic profile using the “Profile” <img alt="" src="_images/profile_tool.png" />. Just draw a line along the river on the DEM (not the REM) and you should be able to see which way it slopes.</p></li>
+<li><p>Note whether the river has levees on both sides or not.</p></li>
+<li><p>Use the profile tool to measure a profile along the same line that you used with the measure tool. Find the crest of the levee (the highest point) and subtract the elevation at the levee toe (the end of your measurement line from before)</p></li>
+</ol>
 </section>
 </section>
 
@@ -376,6 +427,15 @@ document.write(`
                 <footer class="prev-next-footer">
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="identifying_levees.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Identifying natural river levees in lidar</p>
+      </div>
+    </a>
 </div>
                 </footer>
               
@@ -391,9 +451,12 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dividing-the-domain">Dividing the domain</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dividing-the-domain">Dividing the domain</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dissolve-centerline">Dissolve centerline</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#make-points-evenly-spaced-along-the-line">Make points evenly spaced along the line</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#taking-measurements">Taking measurements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-entry-gotchas">Data entry gotchas</a></li>
 </ul>
   </nav></div>
 
@@ -441,8 +504,8 @@ By Eric Barefoot
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+  <script src="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
 
   <footer class="bd-footer">
   </footer>
