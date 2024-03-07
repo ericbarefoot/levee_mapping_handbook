@@ -9,5 +9,5 @@ chapters:
 - file: software
 - file: data_entry
 - file: identifying_levees
-# - file: measuring_levees
+- file: measuring_levees
 
